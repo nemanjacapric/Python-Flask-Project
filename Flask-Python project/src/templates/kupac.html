@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{podaci[1]}}</title>
+    <link rel="stylesheet" href="../static/css/kupac.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-5 logo">
+            <img src="../static/img/logo.png" alt="">
+        </div>
+    </div>
+    
+    <label><h2 class="pz" style="margin-left: 15px;">Korisnik: {{podaci[1]}}</h2></label>
+    <img src="{{podaci[3]}}" alt="">
+   <h3 style="text-align: center;">Trenutna korpa: </h3>
+    
+        <div class="opis">
+            <div><p>Postavio:</p> </div>
+            <div><p>Slika:</p></div>
+            <div><p>Opis:</p></div>
+            <div><p>Naziv:</p></div>
+            <div><p>Cena:</p></div>
+        </div>
+    {% for p in proizvodi %}
+        <div class="korpa">
+            <div class="centriranje">
+                <a href="/profil/{{p[1]}}">{{p[1]}}</a>
+            </div>
+            <div>
+                <img src="{{p[2]}}" width="200" height="200" alt="">
+            </div>
+            <div>
+                <p>{{p[3]}}</p>
+            </div>
+            <div>
+                <p>{{p[4]}}</p>
+            </div>
+            <div>
+                <p>{{p[5]}}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="rezultat">
+        <label><h3 class="pz">Ukupno: {{ukupno}}</h3></label><br>
+    
+    <label><h3 class="pz"> Trenutna sredstva : {{novac}} </h3></label>
+
+
+    <form action="/novcanik" method="POST" enctype="multipart/form-data">
+
+        <input class="dugme_kupi" type="submit" value="Kupi" class="dugmekupi">
+
+    </form><br>
+    
+    {% for message in get_flashed_messages() %}
+            <p class="kupovina">{{message}}</p>
+        {% endfor %}
+    <div class="suma">
+    <form action="/dodavanje" method="POST" enctype="multipart/form-data">
+
+    <label class="us" for="novcanik"><h3 class="pz">Unesite sumu u novčanik:</h3></label>
+    <input type="number" name="novcanik">
+    <input class="dugme" type="submit" value="Potvrdi" >
+
+    </form>
+      </div>
+    </div>
+</body>
+</html>

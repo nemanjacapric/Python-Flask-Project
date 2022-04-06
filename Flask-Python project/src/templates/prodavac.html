@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{username}}</title>
+    <link rel="stylesheet" href="../static/css/prodavac.css">
+    <style> 
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <div class="levastrana">
+    <div class="forma">
+    <form action="/dodaj_proizvod" method="POST" enctype="multipart/form-data">
+        <div class="logo">
+            <img src="../static/img/logo.png" alt="">
+        </div>
+        <div class="razdvajanje">
+        <label for="naziv">Naziv</label>
+        <input type="text" name="naziv" class="hoverefekat">
+        </div>
+        <div class="razdvajanje">
+        <label for="opis">Opis</label>
+        <input type="text" name="opis" class="hoverefekat">
+        </div>
+        <div style="padding-top: 20px;">
+        <label for="slika">Slika</label>
+        <input type="file" name="slika">
+        </div>
+        <div class="razdvajanje">
+        <label for="cena">Cena</label>
+        <input type="number" name="cena" class="hoverefekat">
+        </div>
+        <div class="razdvajanje">
+        <input type="submit" class="dugmesubmit" class="hoverefekat">
+        </div>
+    </form>
+    </div>
+    </div>
+    
+    <div class="desnastrana">
+    <div class="proizvodi">
+        
+        {% for p in proizvodi %}
+        <div class="proizvod">
+            <h1>{{p[4]}}</h1>
+            <img src="{{p[2]}}"alt="">
+            <p>{{p[3]}}</p>
+            <p>Cena: {{p[5]}}</p>
+            {% if tip_korisnika == 'kupac' %}
+                <form action="/dodaj_u_korpu/{{p[0]}}" method="POST">
+                    <input type="submit" value="Dodaj u korpu">
+                </form>
+            {% endif %}
+            <form action="/delete/{{p[0]}}" method="POST">
+                <input type="submit" value="Obrisi proizvod" class="obrisidugme">
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    
+
+    </div>
+</body>
+</html>

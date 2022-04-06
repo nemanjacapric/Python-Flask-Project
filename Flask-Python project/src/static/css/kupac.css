@@ -1,0 +1,91 @@
+body{
+    background-image: url("../images/panel.jpg");
+    background-repeat: contain;
+}
+
+.row{
+    margin: 0 !important;
+    padding: 10px 0px;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.korpa{
+    margin-bottom: 10px !important;
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 10% 40% 30% 10% 10%;
+    border: solid grey thin;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgba(252, 215, 146, 0.5) !important;
+    font-size: 20px;
+}
+
+.opis{
+    display: grid;
+    grid-template-columns: 10% 40% 30% 10% 10%;
+    width: 60%;
+    margin: 0 auto;
+    font-size: larger;
+}
+
+.korpa a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+
+.korpa a:hover{
+    text-decoration: none;
+    color: coral;
+}
+
+.centriranje{
+    margin: 0 auto;
+}
+
+.rezultat{
+    margin-left: 15px;
+
+}
+
+.kupovina{
+
+    color: red;
+    font-size: 60px;
+    background-color: rgba(252, 215, 146, 0.5) !important;
+    text-align: center;
+
+}
+
+.pz{
+    background-color: rgba(252, 215, 146, 0.5) !important;
+}
+
+
+.suma input{
+    background-color:  rgba(255, 255, 255, 0.7);
+}
+
+
+.dugme{
+
+    padding-bottom: 3px;
+
+}
+
+@media screen and (max-width:950px){
+    .opis{
+        width: 100%;
+    }
+
+    .korpa{
+        width: 100%;
+    }
+}

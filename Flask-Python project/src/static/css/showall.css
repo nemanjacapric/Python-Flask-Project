@@ -1,0 +1,151 @@
+body{
+   
+    background-image: url("../images/sal.jpg");
+    background-size: cover; 
+
+}
+
+.hdr{
+    background-color: rgba(252, 215, 146, 0.5) !important;
+}
+
+
+
+
+.proizvod
+        {   
+        
+            border: solid black thin;
+            width: 33% !important;
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            background-color: rgba(252, 215, 146, 0.8) !important;
+
+        }
+        .proizvod img
+        {
+            width: 100%;
+            height: 200px;
+            border: solid rgb(141, 134, 134) 0.5px;
+        }
+
+
+.logo img{
+    width: 100px;
+}
+
+
+.proizvodi{
+    margin: 0 auto;
+}
+
+.row{
+    margin: 0 !important;
+    padding: 10px 0px;
+}
+
+.registracija{
+    text-align: right;
+    color: black;
+    font-size: 20px;
+}
+
+.registracija a{
+    text-decoration: none !important;
+    color: black;
+}
+
+.registracija a:hover{
+    color: green;
+}
+
+.search{
+    padding-top: 30px;
+}
+
+.search input{
+    border-radius: 20px;
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.search button{
+    border-radius: 20px;
+}
+
+.search button:focus{
+    outline: none;
+}
+
+.profil{
+    font-size: 20px;
+}
+
+.profil a{
+    text-decoration: none;
+    color: rgb(150, 19, 19);
+}
+
+.profil a:hover{
+    text-decoration: none;
+}
+
+.proizvod a{
+    text-decoration: none;
+    color: black;
+}
+
+.proizvod a:hover{
+    text-decoration: none;
+    color: coral;
+}
+
+.vest{
+    margin-top: 20px;
+}
+
+.vest img{
+    width: 50%;
+    margin-top: 30px;
+}
+
+.levidiv{
+    text-align: center;
+}
+
+
+.vest1{
+    margin-top: 20px !important;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vest1 img{
+    display: block !important;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1360px){
+    .proizvod img{
+        height: 300px;
+        width: 100%;
+    }
+
+    .proizvod{
+        width: 48% !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .proizvod{
+        width: 98% !important;
+    }
+    .vest1{
+        display: none;
+    }
+}

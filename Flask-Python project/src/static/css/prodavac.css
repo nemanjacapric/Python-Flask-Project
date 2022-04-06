@@ -1,0 +1,110 @@
+body{
+   background-image: url("../images/panel.jpg");
+   background-size: contain;
+}
+
+*{
+    display: block;
+}
+
+
+.proizvodi{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px;
+    margin: 0 70px;
+    
+}
+
+.proizvod img{
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 20px;
+    
+}
+
+.proizvod h1{
+    text-align: center;
+}
+
+.proizvod
+{
+    border: solid black thin;   
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    background-color: rgba(252, 215, 146, 0.3) !important;
+}
+
+.obrisidugme{
+    border-radius: 10px;
+    border-style: solid 1px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.obrisidugme:hover{
+    border: solid rgb(54, 207, 235) 1px; 
+}
+
+
+.hoverefekat:hover{
+    border: solid rgb(54, 207, 235) 1px; 
+} 
+
+.levastrana{
+   padding: 10px;
+   text-align: center;
+}
+
+.levastrana input{
+    margin: 0 auto;
+}
+
+
+.forma{
+    margin: 0 auto;
+}
+
+.razdvajanje{
+    padding-top: 20px;
+}
+
+.razdvajanje input{
+    border-radius: 10px;
+    border: solid black 1px;
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3.5%;
+}
+
+.logo img{
+    width: 60px;
+}
+
+.dugmesubmit{
+    border-radius: 10px;
+}
+
+@media screen and (max-width:1000px){
+    .proizvodi{
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width:900px){
+    .proizvodi{
+    grid-template-columns: 50% 50% !important;
+    }
+}
+
+@media screen and (max-width:600px){
+    .proizvodi{
+        grid-template-columns: 100% !important;
+    }
+}

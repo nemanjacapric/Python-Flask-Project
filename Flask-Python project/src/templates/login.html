@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+    <div class="bg">
+    <div class="forma">
+    <img src="../static/img/logo.png" alt="">
+    <form action="/login" method="POST">
+        {% for message in get_flashed_messages() %}
+            <p>{{message}}</p>
+        {% endfor %}
+        <div class="user1">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="user">
+        </div>
+        <div class="pass1">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="pass">
+        </div>
+        <div class="dugme1">
+        <input type="submit" value="Uloguj se" class="dugme">
+        </div>
+        <div class="nalog">
+        <p>Nemate nalog? <a href="/register">Registrujte se</a></p>
+        </div>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

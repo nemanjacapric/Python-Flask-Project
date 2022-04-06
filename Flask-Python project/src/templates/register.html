@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracija</title>
+    <link rel="stylesheet" href="../static/css/register.css">
+</head>
+<body>
+    <div class="bg">
+    <div class="forma">
+        <img src="../static/img/logo.png" alt="">
+    <form action="/register" method="POST" enctype="multipart/form-data">
+        {% for message in get_flashed_messages() %}
+            <p>{{message}}</p>
+        {% endfor %}
+        <div class="razdvajanje">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="user">
+        </div>
+        <div class="razdvajanje">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="pass">
+        </div>
+        <div class="razdvajanje">
+        <select name="usertype" id="usertype">
+            <option value="kupac">Kupac</option>
+            <option value="prodavac">Prodavac</option>
+
+        </select>
+        </div>
+        <div class="razdvajanje1">
+        <label for="file">Slika</label>
+        <input type="file" name="file">
+        </div>
+        <div class="razdvajanje">
+        <input type="submit" class="submitdugme">
+        </div>
+        <div class="nalog">
+            <p>Imate nalog? <a href="/login">Ulogujte se</a></p>
+        </div>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

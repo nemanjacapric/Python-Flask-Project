@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proizvodi</title>
+    <link rel="stylesheet" href="../static/css/showall.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="row hdr">
+        <div class="col-md-5 logo">
+            <img src="../static/img/logo.png" alt="">
+        </div>
+
+        <div class="col-md-5 search">
+            <form action="/pretraga" method="POST" enctype="multipart/form-data">
+
+                <input type="text" name="search">
+                <input type="submit" >
+        
+            </form>
+        </div>
+
+        <div class="col-md-2 registracija">
+            <a href="/register">Registrujte se</a>
+            <br>
+            <a href="/login">Ulogujte se</a>
+        </div>
+    </div>
+
+    
+<div class="row">
+    
+    <div class="col-2 col-sm-4 col-md-2 col-lg-2 levidiv">
+        <div class="mt-2">
+            <h3 style="background-color: rgba(252, 215, 146, 0.3) !important;">Nasi sponzori:</h3>
+            <div class="vest">
+                <img src="../static/img/carpsystem.png" alt="">
+                <img src="../static/img/sponzor1.png" alt="">
+                <img src="../static/img/sponzor2.png" alt="">
+                <img src="../static/img/sponzor3.png" alt="">
+                <img src="../static/img/sponzor4.png" alt="">
+                <img src="../static/img/sponzor5.png" alt="">
+                <img src="../static/img/sponzor6.png" alt="">
+                <img src="../static/img/sponzor7.png" alt="">
+                <img src="../static/img/sponzor8.png" alt="">
+                <img src="../static/img/sponzor9.png" alt="">
+                <img src="../static/img/sponzor10.png" alt="">
+                <img src="../static/img/sponzor11.png" alt="">
+                <img src="../static/img/sponzor12.png" alt="">
+                <img src="../static/img/sponzor13.png" alt="">
+                <img src="../static/img/sponzor14.png" alt="">
+                <img src="../static/img/sponzor15.png" alt="">
+                <img src="../static/img/sponzor16.png" alt="">
+                <img src="../static/img/sponzor17.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-8 col-sm-8 col-md-8 col-lg-8 srednjidiv">
+
+
+        <h1>Prozvodi</h1>
+        <div class="profil">
+        <label><p style="background-color: rgba(252, 215, 146, 0.8) !important;">Korisnik: <a href="profil/{{session['username']}}">{{session['username']}}</a></p></label>
+        </div>
+
+        <div class="proizvodi">
+        
+            {% for p in rez %}
+            <div class="proizvod">
+                <a  href="/profil/{{p[1]}}">
+                    <h5>{{p[1]}}</h5>
+                </a>
+                <h3>{{p[4]}}</h3>
+                <img src="{{p[2]}}"alt="">
+                <p>{{p[3]}}</p>
+                <b><p>Cena: {{p[5]}}</p></b> 
+    
+                {% if tip_korisnika == 'kupac' %}
+                    <form action="/dodaj_u_korpu/{{p[0]}}" method="POST">
+                        <input type="submit" value="Dodaj u korpu">
+                    </form>
+                {% endif %}
+    
+            </div>
+            {% endfor %}
+            </div>
+    
+        <div class="proizvodi">
+
+        {% for p in proizvodi %}
+        <div class="proizvod">
+            <a href="/profil/{{p[1]}}">
+                <h5>{{p[1]}}</h5>
+            </a>
+            <h3>{{p[4]}}</h3>
+            <img src="{{p[2]}}"alt="">
+            <p>{{p[3]}}</p>
+            <b><p>Cena: {{p[5]}}</p></b> 
+
+            {% if tip_korisnika == 'kupac' %}
+                <form action="/dodaj_u_korpu/{{p[0]}}" method="POST">
+                    <input type="submit" value="Dodaj u korpu">
+                </form>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+        </div>
+        
+    </div>
+
+    <div class="col-2 col-md-2 col-lg-2 desnidiv">
+        <div class="vest1">
+            <img src="../static/img/reklama1.jpg" alt=""> 
+            <img src="../static/img/reklama3.png" alt="">
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
